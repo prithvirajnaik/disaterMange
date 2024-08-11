@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Details</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<header>
+    <h1>Weather Stats In Your Area</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="weather">
+    <h1 class="one1"></h1><br>
+    <h1 class="two2"></h1><br>
+    <h1 class="three3"></h1><br>
+    <h1 class="four4"></h1><br>
+    <h1 class="five5"></h1><br>
+    <h1 class="six6"></h1><br>
+    <h1 class="seven7"></h1><br>
+    <h1 class="eight8"></h1><br>
+    <h1 class="nine9"></h1><br>
+    <h1 class="ten10"></h1><br>
+    <h1 class="eleven11"></h1><br>
+</div>
+    <script>
+        $(document).ready(function() {
+            const weatherData = JSON.parse(localStorage.getItem('weatherData'));
+
+            if (weatherData) {
+                $(".one1").text(`Weather: ${weatherData.description}`);
+                $(".two2").text(`Temperature: ${weatherData.temp} °C`);
+                $(".three3").text(`Feels Like: ${weatherData.feels_like} °C`);
+                $(".four4").text(`Minimum Temperature: ${weatherData.temp_min} °C`);
+                $(".five5").text(`Maximum Temperature: ${weatherData.temp_max} °C`);
+                $(".six6").text(`Humidity: ${weatherData.humidity} %`);
+                $(".seven7").text(`Pressure: ${weatherData.pressure} hPa`);
+                $(".eight8").text(`Wind Speed: ${weatherData.wind_speed} m/s`);
+                $(".nine9").text(`Wind Direction: ${weatherData.wind_deg}°`);
+                $(".ten10").text(`Cloudiness: ${weatherData.cloudiness} %`);
+                $(".eleven11").text(`Location: ${weatherData.location}`);
+            } else {
+                alert("No weather data found!");
+            }
+        });
+    </script>
+</body>
+</html>

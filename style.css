@@ -11,7 +11,7 @@
   justify-content: center;
   grid-template-rows: repeat(3,0fr);
   position:relative;
-  top:100px;
+  top:160px;
   justify-content: center;
   text-align: center;
 }
@@ -188,4 +188,20 @@ li{
 }
 p{
     color:black;
+}
+.weather h1{
+    color:black;
+    position:relative;
+    top:150px;
+    text-align: center;
+}
+.marquee {
+    font-size: 20px;
+    color: #000;
+    background: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    position:relative;
+    top:170px;
+    color:red;
 }
